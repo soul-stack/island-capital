@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101c21" />
+    <title>群岛大亨 · 云轨山城</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect width='20' height='20' rx='4' fill='%23edbb68'/%3E%3Cpath d='M4 9 10 5 16 9 10 13z' fill='%23495e51'/%3E%3Cpath d='m4 10 6 4 6-4v3l-6 4-6-4z' fill='%23223937'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./accounts.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topinner">
+        <a class="brand" href="./" aria-label="群岛大亨游戏桌"
+          ><span id="brand-art"></span><span><strong>群岛大亨</strong><small>ISLAND TYCOON</small></span></a
+        >
+        <nav aria-label="主导航">
+          <button class="navbtn active" id="nav-table"><i data-i="grid"></i>游戏桌</button
+          ><button class="navbtn" id="nav-packs"><i data-i="map"></i>地图包</button
+          ><button class="navbtn" id="nav-assets"><i data-i="case"></i>我的资产</button
+          ><button class="navbtn" id="nav-guide"><i data-i="book"></i>玩法手册</button>
+        </nav>
+        <div class="header-actions">
+          <button class="iconbtn sound" id="sound" title="开启音效" aria-label="开启音效"></button
+          ><span class="vline"></span
+          ><button id="lobby" class="lobbybtn"><i data-i="network"></i><span>联机大厅</span></button>
+        </div>
+      </div>
+    </header>
+    <main class="shell">
+      <div class="intro">
+        <div>
+          <div class="crumb">
+            <span class="mini-line"></span>游戏桌 <b>/</b> <span id="track-type">分岔路线</span>
+          </div>
+          <div class="titleline">
+            <h1 id="map-name">云轨山城</h1>
+            <span class="en-title" id="map-english">SKYRAIL CITY</span>
+          </div>
+        </div>
+        <div class="game-meta">
+          <span class="mode"><em></em><span id="mode-label">本地练习</span></span
+          ><span class="meta-sep"></span><span><i data-i="users"></i><b id="seat-count">4</b> 位玩家</span
+          ><span class="meta-sep"></span
+          ><span><i data-i="repeat"></i>轮次 <strong id="round-count">01 / 30</strong></span>
+        </div>
+      </div>
+      <div class="layout">
+        <div class="board-column">
+          <section class="panel board-panel" id="board-panel">
+            <div class="panelhead board-head">
+              <h2><i data-i="map"></i>路线地图</h2>
+              <div class="head-tools">
+                <span class="board-count" id="map-count"></span>
+                <div class="view-switch" role="group" aria-label="棋盘视图">
+                  <button id="view-3d" aria-pressed="true"><i data-i="cube"></i>3D 沙盘</button
+                  ><button id="view-2d" aria-pressed="false">2D 地图</button>
+                </div>
+                <button class="iconbtn" id="expand" aria-label="全屏地图" title="全屏地图">
+                  <i data-i="expand"></i>
+                </button>
+              </div>
+            </div>
+            <div class="mapwrap">
+              <canvas
+                id="board"
+                role="img"
+                tabindex="0"
+                aria-label="雾港群岛的48格环线地图，点击地块可查看地价和归属"
+              ></canvas
+              ><canvas
+                id="board-3d"
+                hidden
+                tabindex="0"
+                aria-label="雾港群岛立体沙盘，方向键旋转，加减号缩放，数字零恢复全景。可通过地块索引选择地块。"
+              ></canvas>
+            </div>
+            <div id="card-preview" class="card-preview" hidden aria-label="选择卡牌目标"></div>
+            <div id="atlas-tools" hidden></div>
+            <div class="camera-bar" id="camera-bar" hidden>
+              <span class="camera-help"
+                ><i data-i="orbit"></i
+                ><span
+                  >拖动旋转 <b>·</b> <span class="mouse-instruction">滚轮缩放</span
+                  ><span class="touch-instruction">双指缩放</span></span
+                ></span
+              >
+              <div class="camera-controls" role="group" aria-label="沙盘镜头">
+                <button id="landmarks" title="近看地图地标"><i data-i="pin"></i>地标</button><span></span>
+                <button id="rotate-left" aria-label="向左旋转棋盘" title="向左旋转">
+                  <i data-i="left-turn"></i></button
+                ><button id="rotate-right" aria-label="向右旋转棋盘" title="向右旋转">
+                  <i data-i="right-turn"></i></button
+                ><span></span
+                ><button id="zoom-out" aria-label="缩小沙盘" title="缩小"><i data-i="minus"></i></button
+                ><button id="zoom-in" aria-label="放大沙盘" title="放大"><i data-i="plus"></i></button
+                ><span></span><button id="reset-camera" title="恢复全景"><i data-i="focus"></i>全景</button>
+              </div>
+            </div>
+            <div class="boardfoot">
+              <div class="legend">
+                <span><b class="leg land"></b>地产</span><span><b class="leg chance"></b>机遇</span
+                ><span><b class="leg shop"></b>商店</span><span><b class="leg port"></b>港务</span><span><b class="leg bank"></b>银行</span>
+              </div>
+              <button class="textbtn index-btn" id="tile-index"><i data-i="list"></i>地块索引</button>
+            </div>
+          </section>
+          <section class="panel logpanel">
+            <div class="panelhead">
+              <h2><i data-i="radio"></i>对局日志</h2>
+              <button class="textbtn" id="all-log">查看全部<i data-i="chev"></i></button>
+            </div>
+            <div id="log-list" aria-live="polite"></div>
+          </section>
+        </div>
+        <aside>
+          <section class="panel turnpanel">
+            <div class="panelhead">
+              <h2><i data-i="dice"></i>回合操作</h2>
+              <span class="turn-indicator" id="turn-status"></span>
+            </div>
+            <div id="turn-content"></div>
+            <div class="turn-account" id="turn-account"></div>
+          </section>
+          <section class="panel roster-panel">
+            <div class="panelhead">
+              <h2><i data-i="users"></i>玩家列表</h2>
+              <span class="tiny-count" id="roster-count"></span>
+            </div>
+            <div id="roster"></div>
+          </section>
+          <section class="panel bagpanel">
+            <div class="panelhead">
+              <h2><i data-i="bag"></i>道具背包</h2>
+              <button class="textbtn" id="bag-detail">查看<i data-i="chev"></i></button>
+            </div>
+            <div class="bag" id="bag"></div>
+          </section>
+        </aside>
+      </div>
+    </main>
+    <dialog id="modal">
+      <div class="modalhead">
+        <h2 id="modal-title"></h2>
+        <button class="iconbtn" id="modal-close" aria-label="关闭"><i data-i="x"></i></button>
+      </div>
+      <div id="modal-body"></div>
+    </dialog>
+    <div id="toast" role="status"></div>
+    <script type="module" src="./app.mjs"></script>
+  </body>
+</html>

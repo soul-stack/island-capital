@@ -1,0 +1,357 @@
+.turn-account {
+  border-top: 1px solid var(--line);
+  padding: 10px 16px 12px;
+}
+.turn-account:empty,
+.card-preview[hidden] {
+  display: none;
+}
+.player-state {
+  font-size: 12px;
+  color: var(--gold);
+  display: block;
+  white-space: normal;
+}
+.income-due,
+.account-shortcuts,
+.account-nav,
+.settle-links,
+.quote,
+.bill-group summary,
+.bill-line,
+.target-title,
+.target-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.income-due,
+.quote,
+.bill-group summary,
+.bill-line {
+  justify-content: space-between;
+}
+.income-due {
+  font-size: 14px;
+}
+.income-due b,
+.bill-line b {
+  color: #a0d3b8;
+  font-variant-numeric: tabular-nums;
+}
+.income-due small,
+.quote small,
+.target-title small,
+.bill-line small,
+.bill-notice small {
+  color: var(--soft);
+  font-size: 13px;
+  display: block;
+}
+.account-shortcuts,
+.account-nav,
+.settle-links {
+  flex-wrap: wrap;
+}
+.account-shortcuts {
+  margin-top: 7px;
+}
+.account-shortcuts button,
+.account-nav button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #d2ded7;
+  background: #21353b;
+  border: 1px solid #40575a;
+  font-size: 14px;
+}
+.account-nav {
+  margin-bottom: 15px;
+}
+.account-nav button[aria-pressed='true'] {
+  color: #162c26;
+  background: #a0ccb6;
+  border-color: #a0ccb6;
+}
+.order-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 9px;
+  margin: 8px 0;
+}
+.order-form label,
+.target-controls label {
+  flex: 1;
+  min-width: 0;
+  font-size: 13px;
+  color: var(--soft);
+}
+.order-form input,
+.target-controls select {
+  display: block;
+  margin: 3px 0 0;
+  width: 100%;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: #13242b;
+  color: var(--text);
+  font-size: 15px;
+}
+.order-form button {
+  min-width: 65px;
+}
+.order-form input:disabled {
+  opacity: 0.6;
+}
+.security,
+.card-entry,
+.library,
+.bill-group {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 10px 0;
+}
+.quote strong,
+.target-title strong {
+  font-size: 17px;
+}
+.stock-chart {
+  width: 40%;
+  max-width: 155px;
+  height: 42px;
+  color: #91c3ae;
+}
+.quote-meta,
+.target-help {
+  font-size: 13px;
+  color: #b2c6be;
+  margin: 6px 0;
+}
+.bill-group summary,
+.library summary,
+.card-entry summary,
+.library-group summary {
+  cursor: pointer;
+  color: var(--gold);
+}
+.bill-group summary span,
+.bill-line small {
+  font-size: 12px;
+}
+.bill-line {
+  border-top: 1px solid var(--line);
+  padding: 7px 0;
+  font-size: 14px;
+}
+.bill-notice {
+  margin-bottom: 12px;
+}
+.bill-notice strong {
+  color: var(--gold);
+}
+.card-entry .info-row {
+  border: 0;
+  padding: 0;
+}
+.card-entry > p,
+.card-entry details {
+  margin: 6px 0 0;
+  font-size: 14px;
+}
+.card-entry dl {
+  display: grid;
+  grid-template-columns: 3em 1fr;
+  gap: 5px;
+  margin: 8px 0 0;
+}
+.card-entry dt {
+  color: var(--soft);
+}
+.card-entry dd {
+  margin: 0;
+}
+.card-seal {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 36px;
+  flex: 0 0 32px;
+  border: 1px solid var(--ink, #8bb9a3);
+  border-radius: 3px 7px 3px 7px;
+  color: var(--ink, #99c8ae);
+  background: #183038;
+}
+.card-seal svg {
+  width: 23px;
+  height: 26px;
+}
+.bag button .card-seal {
+  pointer-events: none;
+}
+.bag button.bag-empty {
+  width: auto;
+  font-size: 13px;
+  padding: 8px;
+}
+.library-group {
+  border-top: 1px solid var(--line);
+  padding: 8px 0;
+}
+.library > summary {
+  margin-bottom: 6px;
+}
+.card-preview {
+  padding: 12px 16px;
+  border-top: 2px solid #80cbb3;
+  background: #1c353a;
+}
+.target-title {
+  margin-bottom: 8px;
+}
+.target-controls {
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.target-controls label {
+  min-width: 135px;
+}
+.leg.bank {
+  background: #d8e9ba;
+  border: 1px solid #638a64;
+}
+.review-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.review-filters label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.review-filters .account-nav {
+  margin: 0;
+}
+.review-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.review figure {
+  margin: 12px 0 18px;
+  padding: 8px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.review figcaption {
+  padding: 3px 6px 9px;
+  font-weight: 600;
+}
+.review figure img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+.review-detail {
+  max-width: 730px;
+}
+@media (max-width: 680px) {
+  .review-pair {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+@media (max-width: 760px) {
+  .walkthrough .layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .walkthrough .layout > .board-panel {
+    order: 0;
+    width: 100%;
+  }
+  .walkthrough .layout > aside {
+    display: block;
+    order: 1;
+    width: 100%;
+  }
+  .walkthrough .mapwrap {
+    min-height: 230px;
+    height: min(42vh, 300px);
+  }
+}
+.demo-links,
+.demo-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.demo-links a,
+.demo-head a {
+  color: var(--mint);
+  text-underline-offset: 3px;
+}
+.demo-head {
+  margin: 16px 0;
+}
+.demo-head h1 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin: 0;
+}
+.demo-head select {
+  margin-left: auto;
+}
+.demo-body {
+  padding: 14px;
+}
+.demo-body button {
+  margin: 0 6px 6px 0;
+}
+.demo-body ol {
+  padding-left: 22px;
+}
+.demo-body li,
+.demo-body p {
+  font-size: 14px;
+}
+.demo-body li {
+  margin: 8px 0;
+}
+.demo-links {
+  margin: 0 0 14px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.walkthrough .mapwrap canvas {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 520px) {
+  .order-form input,
+  .target-controls select {
+    font-size: 16px;
+  }
+  .target-controls {
+    gap: 6px;
+  }
+  .card-preview,
+  .turn-account {
+    padding: 9px 12px;
+  }
+  .statgrid {
+    gap: 7px;
+  }
+  .target-controls button {
+    padding: 7px 10px;
+  }
+  .bag {
+    flex-wrap: wrap;
+  }
+}

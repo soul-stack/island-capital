@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#101c21" />
+    <title>回合演示 · 群岛大亨</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./accounts.css" />
+  </head>
+  <body>
+    <main class="shell walkthrough">
+      <header class="demo-head">
+        <a href="./">返回游戏桌</a>
+        <h1>回合演示</h1>
+        <select id="scenario" aria-label="选择演示"></select>
+      </header>
+      <div class="layout">
+        <section class="panel board-panel">
+          <div class="panelhead">
+            <h2 id="map"></h2>
+            <button class="secondary" id="view">切换棋盘</button>
+          </div>
+          <div class="mapwrap">
+            <canvas id="flat" tabindex="0" aria-label="演示路线二维地图，方向键平移，加减号缩放，0 看全图，F 定位棋子"></canvas
+            ><canvas hidden tabindex="0" id="three" aria-label="演示立体沙盘"></canvas>
+          </div>
+          <div id="atlas-tools" hidden></div>
+        </section>
+        <aside>
+          <section class="panel">
+            <div class="panelhead">
+              <h2 id="heading"></h2>
+              <span id="counter"></span>
+            </div>
+            <div class="demo-body">
+              <p id="intro"></p>
+              <button class="primary" id="next"></button><button class="secondary" id="reset">重放</button>
+              <div id="positions"></div>
+              <ol id="events" aria-live="polite"></ol>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </main>
+    <script type="module" src="./walkthrough.mjs"></script>
+  </body>
+</html>

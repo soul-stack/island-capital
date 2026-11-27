@@ -1,0 +1,11 @@
+{
+  "name": "island-capital",
+  "version": "1.0.0",
+  "private": true,
+  "description": "群岛大亨 · 多人地产桌游",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node server.mjs"
+  }
+}
